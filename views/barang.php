@@ -22,7 +22,7 @@ if (@$_GET['act'] == '') {
         <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Data</button>
         <hr>
         <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped">
+            <table class="table table-bordered table-hover table-striped" id="datatables">
                 <thead>
                     <tr>
                         <th>No.</th>

@@ -19,6 +19,7 @@ $connection = new Database($hostname, $user, $pass, $database);
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/datatables/datatables.min.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
     <link href="assets/css/sb-admin.css" rel="stylesheet">
@@ -98,7 +99,12 @@ if (@$_GET['page'] == 'dashboard' || @$_GET['page'] == '') {
     <!-- JavaScript -->
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script src="assets/js/bootstrap.js"></script>
-
+    <script src="assets/datatables/datatables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#datatables').DataTable();
+    });
+    </script>
 </body>
 
 </html>
