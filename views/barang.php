@@ -19,7 +19,11 @@ if (@$_GET['act'] == '') {
 
 <div class="row">
     <div class="col-lg-12">
-        <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Data</button>
+        <button class="btn btn-success" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah
+            Data</button>
+        <a href="./report/export_excel_barang.php" target="_blank">
+            <button class="btn btn-default"><i class="fa fa-print"></i> Export Excel</button>
+        </a>
         <hr>
         <div class="table-responsive">
             <table class="table table-bordered table-hover table-striped" id="datatables">
