@@ -18,6 +18,15 @@ $content = '
     background-color: #f60;
     color:#fff;
 }
+
+.table td {
+    padding:3px;
+}
+
+img {
+    width:70px;
+}
+
 </style>
 ';
 
@@ -37,7 +46,24 @@ $content .= '
             <th>Nama Barang</th>
             <th>Harga Barang</th>
             <th>Stok Barang</th>
-        </tr>
+            <th>Gambar Barang</th>
+        </tr>';
+
+$no = 1;
+$tampil = $brg->tampil();
+while ($data = $tampil->fetch_object()) {
+    $content .= '
+<tr>
+    <td align="center">' . $no++ . '.</td>
+    <td>' . $data->nama_brg . '</td>
+    <td>Rp. ' . number_format($data->harga_brg, 2, ",", ".") . '</td>
+    <td align="center">' . $data->stok_brg . '</td>
+    <td align="center"><img src="../assets/img/barang/' . $data->gbr_brg . '"></td>
+</tr>
+            ';
+}
+
+$content .= '
     </table>
 </page>
 ';

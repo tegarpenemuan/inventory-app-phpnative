@@ -58,7 +58,7 @@ $no = 1;
                             <img src="assets/img/barang/<?=$data->gbr_brg?>" width="70px" alt="<?=$data->nama_brg?>">
                         </td>
                         <td><?=$data->nama_brg?></td>
-                        <td><?=$data->harga_brg?></td>
+                        <td><?="Rp. " . number_format($data->harga_brg, 2, ",", ".")?></td>
                         <td><?=$data->stok_brg?></td>
                         <td align="center">
                             <a id="edit_brg" data-toggle="modal" data-target="#edit" href=""
