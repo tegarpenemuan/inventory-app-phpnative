@@ -50,7 +50,11 @@ $content .= '
         </tr>';
 
 $no = 1;
-$tampil = $brg->tampil();
+if (@$_GET['id'] != '') {
+    $tampil = $brg->tampil(@$_GET['id']);
+} else {
+    $tampil = $brg->tampil();
+}
 while ($data = $tampil->fetch_object()) {
     $content .= '
 <tr>

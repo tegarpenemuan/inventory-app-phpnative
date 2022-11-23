@@ -71,6 +71,9 @@ $no = 1;
                                 onclick="return confirm('Yakin hapus data ini?')">
                                 <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus</button>
                             </a>
+                            <a href="./report/cetak_barang.php?id=<?=$data->id_brg;?>" target="_blank">
+                                <button class="btn btn-default btn-xs"><i class="fa fa-print"></i> Cetak</button>
+                            </a>
                         </td>
                     </tr>
                     <?php }?>
