@@ -46,6 +46,7 @@ $content .= '
             <th>Nama Barang</th>
             <th>Harga Barang</th>
             <th>Stok Barang</th>
+            <th>Tgl Publish</th>
             <th>Gambar Barang</th>
         </tr>';
 
@@ -53,7 +54,11 @@ $no = 1;
 if (@$_GET['id'] != '') {
     $tampil = $brg->tampil(@$_GET['id']);
 } else {
-    $tampil = $brg->tampil();
+    if (@$_POST['cetak_barang']) {
+        $tampil = $brg->tampil_tgl(@$_POST['tgl_a'], @$_POST['tgl_b']);
+    } else {
+        $tampil = $brg->tampil();
+    }
 }
 while ($data = $tampil->fetch_object()) {
     $content .= '
@@ -62,6 +67,7 @@ while ($data = $tampil->fetch_object()) {
     <td>' . $data->nama_brg . '</td>
     <td>Rp. ' . number_format($data->harga_brg, 2, ",", ".") . '</td>
     <td align="center">' . $data->stok_brg . '</td>
+    <td>' . date('d F Y', strtotime($data->tgl_publish)) . '</td>
     <td align="center"><img src="../assets/img/barang/' . $data->gbr_brg . '"></td>
 </tr>
             ';

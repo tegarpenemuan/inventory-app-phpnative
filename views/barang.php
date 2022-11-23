@@ -41,6 +41,7 @@ include ".modal_brg_add.php";
                         <th>Nama Barang</th>
                         <th>Harga Barang</th>
                         <th>Stok Barang</th>
+                        <th>Tgl Publish</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -60,6 +61,7 @@ $no = 1;
                         <td><?=$data->nama_brg?></td>
                         <td><?="Rp. " . number_format($data->harga_brg, 2, ",", ".")?></td>
                         <td><?=$data->stok_brg?></td>
+                        <td><?=date('d F Y', strtotime($data->tgl_publish))?></td>
                         <td align="center">
                             <a id="edit_brg" data-toggle="modal" data-target="#edit" href=""
                                 data-id="<?=$data->id_brg?>" data-nama="<?=$data->nama_brg?>"
